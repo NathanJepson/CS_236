@@ -1,0 +1,23 @@
+Dependency Graph
+R0:
+R1:R1
+
+Rule Evaluation
+SCC: R1
+a(A,P) :- a(A,X),j(X,P).
+  C='1', D='4'
+a(A,P) :- a(A,X),j(X,P).
+  C='1', D='5'
+  C='1', D='6'
+a(A,P) :- a(A,X),j(X,P).
+3 passes: R1
+SCC: R0
+g(P,G) :- j(G,X),j(X,P).
+  A='4', B='1'
+  A='4', B='2'
+  A='5', B='3'
+  A='6', B='3'
+1 passes: R0
+
+Query Evaluation
+a('1','6')? Yes(1)
